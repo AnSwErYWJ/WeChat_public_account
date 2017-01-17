@@ -154,7 +154,6 @@ class wechatCallbackapiTest
     private function receiveText($object)
     {
         $keyword = trim($object->Content);
-		//$str = mb_substr($keyword,-2,2,"UTF-8");
         $str_key = mb_substr($keyword,0,2,"UTF-8");
         
         if(strstr($keyword, "天气"))

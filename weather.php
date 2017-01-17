@@ -2,7 +2,7 @@
 
 	function weather($n)
     {
-        $code=$this->check($n);
+        $code=check($n);
     	if(!empty($code)){
         	$json=file_get_contents("http://mobile.weather.com.cn/data/sk/{$code}.html");
         	return json_decode($json);
@@ -13,7 +13,7 @@
 	
     
 	//根据城市名获取编码
-   	private function check($str){
+   	function check($str){
 		include("weather_id.php");
 		if (in_array($str, $arr)) {
 			return array_search($str, $arr);
